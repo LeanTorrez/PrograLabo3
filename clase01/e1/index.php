@@ -1,9 +1,7 @@
 <?php
-/*
-Aplicación No 2 (Mostrar fecha y estación)
-Obtenga la fecha actual del servidor (función date) y luego imprímala dentro de la página con
-distintos formatos (seleccione los formatos que más le guste). Además indicar que estación del
-año es. Utilizar una estructura selectiva múltiple.
+/*obtenga la fecha acutal del servidor (Funcion date)
+y luego imprimala dentro de la pagina con disitintos formatos.
+ademas indicar que estacion del año es. Utilizar una structura selectiva multiple
 */
 
 $fecha = date("D/M/Y");
@@ -31,5 +29,10 @@ switch($mes){
         $estacion = "Es primavera";
         break;
 }
+
 print("$fecha por lo tanto $estacion");
+
+function _NumeroAPalabra($numero){
+    
+}
 ?>

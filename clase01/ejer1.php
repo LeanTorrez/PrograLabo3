@@ -1,38 +1,23 @@
 <?php
-/*obtenga la fecha acutal del servidor (Funcion date)
-y luego imprimala dentro de la pagina con disitintos formatos.
-ademas indicar que estacion del año es. Utilizar una structura selectiva multiple
-*/
+/*
+Aplicación No 1 (Sumar números)
+Confeccionar un programa que sume todos los números enteros desde 1 mientras la suma no
+supere a 1000. Mostrar los números sumados y al finalizar el proceso indicar cuantos números
+se sumaron.
+*/ 
 
-$fecha = date("D/M/Y");
-$mes = date("M");
+$sumaNum = 1;
+$i = 0;
 
-switch($mes){
-    case "Jan":
-    case "Feb":
-    case "Mar":
-        $estacion ="Es verano";
+while(true){
+    $sumaNum += $i;
+
+    if($sumaNum > 1000)
         break;
-    case "Apr":
-    case "May":
-    case "Jun":
-        $estacion = "Es otoño";
-        break;
-    case "Jul":
-    case "Aug":
-    case "Sep":
-        $estacion = "Es invierno";
-        break;
-    case "Oct":
-    case "Nov":
-    case "Dec":
-        $estacion = "Es primavera";
-        break;
+
+    echo("$sumaNum + $i = $sumaNum <br>");
+    $i++;
 }
 
-print("$fecha por lo tanto $estacion");
-
-function _NumeroAPalabra($numero){
-    
-}
+print("La cantidad de numeros que se sumaron fueron $i");
 ?>
