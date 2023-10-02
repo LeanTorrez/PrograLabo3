@@ -1,0 +1,5 @@
+{"_id":9515,"_codigoBarra":"abc","_nombre":"leche","_tipo":"lacteo","_stock":1,"_precio":"1000"}
+{"_id":8272,"_codigoBarra":"pvc","_nombre":"arcor chocolate","_tipo":"comestible","_stock":30,"_precio":"1000"}
+{"_id":6464,"_codigoBarra":"1021","_nombre":"Azucar Negra","_tipo":"comestible","_stock":7400,"_precio":"300"}
+{"_id":8064,"_codigoBarra":"1022","_nombre":"Arroz","_tipo":"comestible","_stock":50,"_precio":"300"}
+{"_id":1006,"_codigoBarra":"2023","_nombre":"carne vacuna","_tipo":"comestible","_stock":50,"_precio":"10000"}

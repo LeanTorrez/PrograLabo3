@@ -80,5 +80,46 @@ class Auto
             return 0;
         }
     }
+
+    static function EscrituraAutoCSV($auto){
+
+        if($auto instanceof Auto){
+            $archivo = fopen("../clase03/auto.csv","a");
+            $cadena = "$auto->_marca".","."$auto->_color".","."$auto->_precio".","."$auto->_fecha\n";
+
+            $retorno = fwrite($archivo,$cadena);
+
+            if($retorno > 0){
+                echo "Se agrego el auto";
+            }
+            else
+            {
+                echo "No se pudo agregar el auto";
+            }
+            fclose($archivo);
+        }
+        return false;
+    }
+
+    static function LecturaAutoCSV(){
+        
+        if(file_exists("../clase03/auto.csv")){
+            $archivo = fopen("../clase03/auto.csv","r");           
+            while(!feof($archivo)){
+               
+                $parametros = fgetcsv($archivo,null,",");
+                if($parametros != false){
+                    $auto = new Auto($parametros[0],$parametros[1],$parametros[2],$parametros[3]);                
+                    $arrayAutos[] = $auto;
+                }else{
+                    break;
+                }
+             
+            } 
+
+            return $arrayAutos;
+        }
+        return false;
+    }
 }
 ?>

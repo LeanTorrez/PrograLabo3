@@ -75,5 +75,45 @@ class Garage
             echo "<br/>El auto no esta en el garage";
         }
     }
+
+    static function EscribirGarageCSV($garage){
+
+        if($garage instanceof Garage){
+
+            if(file_exists("./garage.csv")){
+
+                $archivo = fopen("./garage.csv","a");
+                $cadena = "$garage->_razonSocial,$garage->_precioPorHora";
+                $retorno = fwrite($archivo,$cadena);
+                if($retorno > 0){
+                    echo "Se guardo el garage en el csv";
+                }else{
+                    echo "No se pudo guardar el garage en el csv";
+                }
+                fclose($garage);           
+            }
+        }
+    }
+
+    static function LeerGarageCSV(){
+        if(file_exists("./garage.csv")){
+
+            $archivo = fopen("./garage.csv","r");
+            while(!feof($archivo)){
+
+                $parametros = fgetcsv($archivo,null,",");
+
+                if($parametros === false){
+                    $garage = new Garage($parametros[0],$parametros[1]);
+                    $arrayGarage[] = $garage;
+                }
+
+            }
+            return $arrayGarage;
+        }
+        return false;
+
+    }
+
 }
 ?>
